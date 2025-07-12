@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,37 +31,22 @@ const Index = () => {
     setShowReport(false);
 
     try {
-      // This is where you'll integrate with your Python backend
-      const response = await fetch('/api/research', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: searchQuery,
-          email: email
-        })
-      });
+      // Simulate backend processing delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
 
-      if (!response.ok) {
-        throw new Error('Failed to generate report');
-      }
-
-      const data = await response.json();
-      
       // Display the confirmation message
       toast({
         title: "Report Generated!",
         description: `Detailed report sent to ${email}`,
       });
 
-      // Mock report content for now - replace this with actual backend response
+      // Mock detailed report content
       const mockReport = `
         <div class="prose max-w-none">
           <h2 class="text-2xl font-bold text-gray-900 mb-4">Research Report: ${searchQuery}</h2>
           
           <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
-            <p class="text-blue-800"><strong>Report sent to:</strong> ${email}</p>
+            <p class="text-blue-800"><strong>Detailed report sent to:</strong> ${email}</p>
           </div>
 
           <h3 class="text-xl font-semibold text-gray-800 mb-3">Executive Summary</h3>
