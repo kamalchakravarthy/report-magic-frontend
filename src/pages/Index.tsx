@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,7 +7,7 @@ import { Loader2, Search, Mail, FileText, Sparkles } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
-  const [searchQuery, setSearchQuery] = useState('Best skills to learn in 2025');
+  const [searchQuery, setSearchQuery] = useState('');
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [reportContent, setReportContent] = useState('');
